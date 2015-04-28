@@ -1,6 +1,8 @@
-hh =dtmfdesign(fb, 80, fs);
+fb=[1209,1336,1477,697,770,852,941];
+fs=8000;
+L=80;
+hh =dtmfdesign(fb, L, fs);
 xx=dtmfdial('3',fs);
-plot(conv(hh(:,5),xx),'v')
 x=zeros(1,7);
 for i=1:7
     x(i)=max(conv(xx,hh(:,i)));
